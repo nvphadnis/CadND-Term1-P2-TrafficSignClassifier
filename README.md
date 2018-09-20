@@ -24,7 +24,7 @@ This step (cell 3) revealed that the 43 traffic sign classes cover signs for spe
 
 **Preprocess the Data Set**
 
-I tried to overcome the image blurriness with the gaussian function which negates the Gaussian blur from the original image through a weighted average of all pixels. To compare model performance with grayscaled images, I created the gray function using cv2.COLOR_RGB2GRAY. Finally I created the norm function to normalize all pixels between -0.5 and 0.5 to speed up model convergence (cells 4 and 5).
+I tried to overcome the image blurriness with the *gaussian* function which negates the Gaussian blur from the original image through a weighted average of all pixels. To compare model performance with grayscaled images, I created the *gray* function using cv2.COLOR_RGB2GRAY. Finally I created the norm function to *normalize* all pixels between -0.5 and 0.5 to speed up model convergence (cells 4 and 5).
 I also generated additional images to overcome the concern of underrepresenting certain classes (cell 6). To generate these additional images, I randomly selected images within each class and rotated them by an arbitrary angle from the [-20, -15, -10, -5, 5, 10, 15, 20] array. I explored two alternatives:
 1. Each class to have number of images at least equal to the mean of the number of images in every class in the original training set (809 images for this training set)
 2. Each class to have number of images equal to the maximum number of images in a single class in the original training set (2010 images for this training set)
@@ -35,7 +35,7 @@ Cells 7 and 8 apply this preprocessing to all images and plot random before/afte
 I used the LeNet architecture with a change in the output shape for the final fully connected layer (cell 10). I later added two dropout layers to improve accuracy (explained later in this writeup). I stuck with a batch size of 128 which my machine was capable of handling. Most of my validation accuracy plots began stabilizing after 10 epochs and did not improve after 15 epochs (cell 9). This table summarizes my final model architecture.
 
 Layer | Input shape | Output shape
-- | - | -
+----- | ----------- | ------------
 Convolutional | 32x32x3 | 28x28x6
 ReLU Activation | 28x28x6 | 28x28x6
 Max Pooling | 28x28x6 | 14x14x6

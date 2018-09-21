@@ -1,4 +1,4 @@
-# CadND-Term1-P2-TrafficSignClassifier
+# CarND-Term1-P2-TrafficSignClassifier
 Self-Driving Car Engineer Nanodegree Program: Term 1 Project 2
 
 ### Step 0: Load The Data
